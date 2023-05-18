@@ -37,9 +37,11 @@ class MenuBuilder:
                     dish_info['price'].append(dish.price)
                     dish_info['restrictions'].append(dish.get_restrictions())
                 elif len(dish_info) == 0:
-                    dish_info.update({'dish_name': [dish.name]})
-                    dish_info.update({'ingredients': [dish.get_ingredients()]})
-                    dish_info.update({'price': [dish.price]})
-                    dish_info.update({'restrictions': [dish.get_restrictions()]})
-        
+                    dish_info.update({
+                        'dish_name': [dish.name],
+                        'ingredients': [dish.get_ingredients()],
+                        'price': [dish.price],
+                        'restrictions': [dish.get_restrictions()]
+                    })
+
         return pd.DataFrame(dish_info)
